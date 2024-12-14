@@ -5,9 +5,14 @@ using UnityEngine.Animations;
 
 public class NPCIK : MonoBehaviour
 {
+    /*
+     * --------------------------------------------------This code is based on INSERT UNITY SOURCE-----------------------------------------------------------
+     */
+
+    //TODO: refactor this
     public GameObject lookTarget;
     Animator animator;
-   public bool isikActive = false;
+   public bool ikActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,17 +29,17 @@ public class NPCIK : MonoBehaviour
     {
         if (animator) 
         {
-            if (isikActive)
+            if (ikActive)
             {
 
                 if (lookTarget != null)
                 {
-                    animator.SetLookAtWeight(1);
+                    animator.SetLookAtWeight(1,.01f,.75f); //eyes need to be handled separate as they do not have bones
                     animator.SetLookAtPosition(lookTarget.transform.position);
                 }
                 else
                 {
-                    animator.SetLookAtWeight(0);
+                    animator.SetLookAtWeight(0,0,0);
                 }
             }
         }
