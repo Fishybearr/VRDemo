@@ -14,9 +14,9 @@ public class Fade : MonoBehaviour
     [SerializeField]
     Vector3 largeScale = new Vector3(2,2,2);
     [SerializeField]
-    Vector3 smallScale = new Vector3(1,1,1);
+    Vector3 defaultScale = new Vector3(1,1,1);
     [SerializeField]
-    Vector3 defaultScale = new Vector3(.5f,.5f,.5f);
+    Vector3 smallScale = new Vector3(.5f,.5f,.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -49,15 +49,15 @@ public class Fade : MonoBehaviour
     {
         ChangeFade();
         yield return new WaitForSeconds(1);
-        if (dropDown.value == 0)
+        if (dropDown.value == 1)
         {
             //set defaultScale
-            player.transform.localScale = defaultScale;
+            player.transform.localScale = smallScale;
         }
-        else if (dropDown.value == 1)
+        else if (dropDown.value == 0)
         {
             //set small size
-            player.transform.localScale = smallScale;
+            player.transform.localScale = defaultScale;
         }
         else
         {

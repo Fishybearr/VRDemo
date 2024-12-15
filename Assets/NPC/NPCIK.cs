@@ -10,21 +10,29 @@ public class NPCIK : MonoBehaviour
      */
 
     //TODO: refactor this
-    public GameObject lookTarget;
+    public GameObject inputTarget;
+     GameObject lookTarget;
     Animator animator;
    public bool ikActive = false;
 
-    [SerializeField]
-    float globalWeight = 1.0f;
-    [SerializeField]
-    float bodyWeight = .01f;
-    [SerializeField]
-    float headWeight = .75f;
+    
+    public float globalWeight = 1.0f;
+  
+    public float bodyWeight = .01f;
+    
+    public float headWeight = .75f;
 
     GameObject pivot;
-    // Start is called before the first frame update
+
+    public Transform startTransform;
+
     void Start()
     {
+        
+        startTransform.position = transform.position;
+        startTransform.rotation = transform.rotation;
+
+        lookTarget = inputTarget;
         animator = GetComponent<Animator>();
         pivot = new GameObject("pivot");
         pivot.transform.parent = transform;
@@ -81,9 +89,15 @@ public class NPCIK : MonoBehaviour
                 else
                 {
                     //set global weight to 0
-                    animator.SetLookAtWeight(0);
+                    animator.SetLookAtWeight(0,0,0);
                 }
             }
         }
+    }
+
+    public void resetRot() 
+    {
+        transform.rotation = startTransform.rotation;
+        transform.position = new Vector3(transform.position.x, startTransform.position.y, transform.position.z);
     }
 }
