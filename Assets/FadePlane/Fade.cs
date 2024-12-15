@@ -63,7 +63,7 @@ public class Fade : MonoBehaviour
         {
             //set big size
             player.transform.localScale = largeScale;
-            Debug.Log(dropDown.value.ToString());
+            //Debug.Log(dropDown.value.ToString());
         }
         ChangeFade();
     }
