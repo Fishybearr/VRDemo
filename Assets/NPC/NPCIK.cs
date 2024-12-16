@@ -13,6 +13,7 @@ public class NPCIK : MonoBehaviour
     //TODO: refactor this
     public GameObject lookTarget;
     Animator animator;
+
     public bool ikActive = false;
 
     public float globalWeight = 1.0f;
@@ -29,6 +30,8 @@ public class NPCIK : MonoBehaviour
 
     public float animatorStartSpeed = .75f;
 
+    public bool shouldLook = false;
+
     void Start()
     {
         pivot = new GameObject("pivot");
@@ -44,7 +47,7 @@ public class NPCIK : MonoBehaviour
         
 
         //sets up transforms for pivot obj
-        pivot.transform.parent = transform;
+        pivot.transform.parent = transform; // changed from transform
         pivot.transform.localPosition = new Vector3(0, 1.5f, 0); //TODO: no magic numbers
         //this transform will need to be locked somehow so that the animMovement
         //does not interfere with the looking
@@ -69,7 +72,7 @@ public class NPCIK : MonoBehaviour
         float pivotRotY = pivot.transform.localRotation.y;
 
         //TODO: make a duplicate of this system for chest rotation
-        if (pivotRotY < .65f && pivotRotY > -.65f)
+        if (pivotRotY < .65f && pivotRotY > -.65f && shouldLook) //changed from .65,-.65
         {
             globalWeight = Mathf.Lerp(globalWeight, 1, Time.deltaTime * 2.5f); //TODO: swap 2.5 with a resetFactor float
         }
