@@ -18,5 +18,6 @@ This will download an **APK** built for Meta Quest devices. [Here's a link](http
  - Idle state and animation
  - Animation speed scales with character size
  - Character head distance and rotation limits
+ - Character only looks at player when player looks at their top half
  - Resizable play field
  - Motion sickness prevention when resizing play field
