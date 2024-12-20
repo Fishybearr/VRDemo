@@ -14,7 +14,7 @@ public class NPCIK : MonoBehaviour
     public GameObject lookTarget;
     Animator animator;
 
-    public bool ikActive = false;
+    public bool ikActive = true;
 
     public float globalWeight = 1.0f;
 
