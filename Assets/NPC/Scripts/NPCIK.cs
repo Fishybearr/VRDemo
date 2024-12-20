@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NPCIK : MonoBehaviour
 {
     /*
-     * --------------------------------------------------This code is based on INSERT UNITY SOURCE-----------------------------------------------------------
+     * This script is based on Unity's demo ik implementation https://docs.unity3d.com/6000.0/Documentation/Manual/InverseKinematics.html
      */
 
     //TODO: refactor this
