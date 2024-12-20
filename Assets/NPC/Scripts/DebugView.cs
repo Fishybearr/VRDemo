@@ -22,8 +22,8 @@ public class DebugView : MonoBehaviour
 
     Vector3 sphereDefaultScale;
 
-    //TODO: Disasble all extra settings from this menu when disabling
     public GameObject debugMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,35 +40,31 @@ public class DebugView : MonoBehaviour
         defaultScale = scale.value;
     }
 
-    public void UpdateSpherePos() 
+    public void UpdateSpherePos()
     {
         debugSphere.transform.localPosition = new Vector3(xPos.value, yPos.value, zPos.value);
     }
 
-    public void UpdateSphereScale() 
+    public void UpdateSphereScale()
     {
         debugSphere.transform.localScale = sphereDefaultScale * scale.value;
     }
 
-
-    public void ToggleDebugRender() 
+    public void ToggleDebugRender()
     {
         isActive = !isActive;
         debugRay.SetActive(isActive);
         debugSphere.GetComponent<MeshRenderer>().enabled = isActive;
     }
 
-    public void ToggleDebugSettings() 
+    public void ToggleDebugSettings()
     {
         debugActive = !debugActive;
         debugMenu.SetActive(debugActive);
     }
 
-    public void ResetSettings() 
+    public void ResetSettings()
     {
-        //debugSphere.transform.localPosition = new Vector3(defaultXPos, defaultYPos, defaultZPos);
-        //debugSphere.transform.localScale = sphereDefaultScale * defaultScale;
-
         xPos.value = defaultXPos;
         yPos.value = defaultYPos;
         zPos.value = defaultZPos;

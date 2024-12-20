@@ -10,7 +10,6 @@ public class NPCIK : MonoBehaviour
      * This script is based on Unity's demo ik implementation https://docs.unity3d.com/6000.0/Documentation/Manual/InverseKinematics.html
      */
 
-    //TODO: refactor this
     public GameObject lookTarget;
     Animator animator;
 
@@ -41,40 +40,23 @@ public class NPCIK : MonoBehaviour
         startTransform.rotation = transform.rotation;
         startTransform.localScale = transform.localScale;
 
-        
         animator = GetComponent<Animator>();
-
-        
 
         //sets up transforms for pivot obj
         pivot.transform.parent = transform; // changed from transform
-        pivot.transform.localPosition = new Vector3(0, 1.5f, 0); //TODO: no magic numbers
-        //this transform will need to be locked somehow so that the animMovement
-        //does not interfere with the looking
+        pivot.transform.localPosition = new Vector3(0, 1.5f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*TODO: if raycast from player is not hitting her
-         *  face then lerp globalWeight to 0 in update()
-         *
-         *  then add some kind of tracking of this for the smile blendshape
-         *
-         *  also add distance calculation to prevent her from looking at
-         *  player when too far away
-         *
-         *  ALSO Set x limits on rotation for head
-         */
-
         //Manages the pivot Transform used to limit IK rotation for the character
         pivot.transform.LookAt(lookTarget.transform);
         float pivotRotY = pivot.transform.localRotation.y;
 
-        //TODO: make a duplicate of this system for chest rotation
-        if (pivotRotY < .65f && pivotRotY > -.65f && shouldLook) //changed from .65,-.65
+        if (pivotRotY < .65f && pivotRotY > -.65f && shouldLook)
         {
-            globalWeight = Mathf.Lerp(globalWeight, 1, Time.deltaTime * 2.5f); //TODO: swap 2.5 with a resetFactor float
+            globalWeight = Mathf.Lerp(globalWeight, 1, Time.deltaTime * 2.5f);
         }
         else
         {
