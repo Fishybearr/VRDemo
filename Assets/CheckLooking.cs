@@ -19,7 +19,7 @@ public class CheckLooking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.DrawRay(transform.position, transform.forward, Color.red);
+        //Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
 
         if(Physics.Raycast(transform.position,transform.forward,out hit,noticeDistance,mask))
