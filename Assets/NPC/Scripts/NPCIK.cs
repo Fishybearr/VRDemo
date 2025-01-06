@@ -21,6 +21,8 @@ public class NPCIK : MonoBehaviour
 
     public float headWeight = .75f;
 
+    public float eyeWeight = 1.0f;
+
     GameObject pivot;
 
     public Transform startTransform;
@@ -75,13 +77,13 @@ public class NPCIK : MonoBehaviour
             {
                 if (lookTarget != null)
                 {
-                    animator.SetLookAtWeight(globalWeight, bodyWeight, headWeight); //eyes need to be handled separate as they do not have bones
+                    animator.SetLookAtWeight(globalWeight, bodyWeight, headWeight,eyeWeight); //eyes need to be handled separate as they do not have bones
                     animator.SetLookAtPosition(lookTarget.transform.position);
                 }
                 else
                 {
                     //set global weight to 0
-                    animator.SetLookAtWeight(0, 0, 0);
+                    animator.SetLookAtWeight(0, 0, 0, 0);
                 }
             }
         }

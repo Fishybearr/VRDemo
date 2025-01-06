@@ -22,7 +22,7 @@ public class blink : MonoBehaviour
     void Update()
     {
         //updates blink BlendShape every frame based on blinkAmount
-        gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(1, blinkAmount);
+        gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, blinkAmount);
 
         // runs blink Coroutines when possible
         if (canBlink)

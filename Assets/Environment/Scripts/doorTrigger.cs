@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class doorTrigger : MonoBehaviour
 {
-    public Animator animator;
+    public Animator animator1;
+    public Animator animator2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,8 +17,10 @@ public class doorTrigger : MonoBehaviour
 
     IEnumerator doorTimer()
     {
-        animator.SetBool("open", true);
+        animator1.SetBool("open", true);
+        animator2.SetBool("open", true);
         yield return new WaitForSeconds(4);
-        animator.SetBool("open", false);
+        animator1.SetBool("open", false);
+        animator2.SetBool("open", false);
     }
 }
