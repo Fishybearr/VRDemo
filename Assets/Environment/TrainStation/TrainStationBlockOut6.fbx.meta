@@ -23,12 +23,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: GuideCarStuff
-    second: {fileID: 6977930495890936894, guid: 5501183f38e282e43b1401a7f0732d9c, type: 3}
+    second: {fileID: 6977930495890936894, guid: 3f3e19784b48aa040bfcb93430ccfd09, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: GuideWire
-    second: {fileID: 3186980096934469196, guid: c0842358cb0e9024cb31dccc399af3bc, type: 3}
+    second: {fileID: 3186980096934469196, guid: 3f3e19784b48aa040bfcb93430ccfd09, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -73,7 +73,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SkyThings
-    second: {fileID: 144559175379087848, guid: 962f0c7a1b1b42847b2b5ad6e93a4773, type: 3}
+    second: {fileID: 144559175379087848, guid: 3f3e19784b48aa040bfcb93430ccfd09, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -98,12 +98,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Window
-    second: {fileID: 8992934318045909824, guid: 962f0c7a1b1b42847b2b5ad6e93a4773, type: 3}
+    second: {fileID: 8992934318045909824, guid: 3f3e19784b48aa040bfcb93430ccfd09, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowFrame
-    second: {fileID: 5250634805973149956, guid: 962f0c7a1b1b42847b2b5ad6e93a4773, type: 3}
+    second: {fileID: 5250634805973149956, guid: 3f3e19784b48aa040bfcb93430ccfd09, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
